@@ -9,6 +9,7 @@ const router = express.Router();
 // -------------------- //
 // S T A R T    C O D E //
 
+router.use('/', require('./swagger'));
 router.use('/movies', require('./movieRoutes'));
 router.use('/users', require('./userRoutes'));
 

@@ -5,8 +5,8 @@ const doc = {
         title: 'My API',
         description: 'Movie DB',
     },
-    host: 'https://cse341-movie-db-project.onrender.com',
-    schemes: ['https'],
+    host: 'cse341-movie-db-project.onrender.com',
+    schemes: ['https']
 };
 
 const outputFile = './swagger.json';
