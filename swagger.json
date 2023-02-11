@@ -1,0 +1,463 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Movie DB",
+    "version": "1.0.0"
+  },
+  "host": "cse341-movie-db-project.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/movies/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "imageURL": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "movieHours": {
+                  "example": "any"
+                },
+                "movieMinutes": {
+                  "example": "any"
+                },
+                "genreAction": {
+                  "example": "any"
+                },
+                "genreAdventure": {
+                  "example": "any"
+                },
+                "genreAnimation": {
+                  "example": "any"
+                },
+                "genreBiography": {
+                  "example": "any"
+                },
+                "genreComedy": {
+                  "example": "any"
+                },
+                "genreCrime": {
+                  "example": "any"
+                },
+                "genreDocumentary": {
+                  "example": "any"
+                },
+                "genreDrama": {
+                  "example": "any"
+                },
+                "genreFamily": {
+                  "example": "any"
+                },
+                "genreFantasy": {
+                  "example": "any"
+                },
+                "genreHistory": {
+                  "example": "any"
+                },
+                "genreHorror": {
+                  "example": "any"
+                },
+                "genreMusic": {
+                  "example": "any"
+                },
+                "genreMusical": {
+                  "example": "any"
+                },
+                "genreMystery": {
+                  "example": "any"
+                },
+                "genreRomance": {
+                  "example": "any"
+                },
+                "genreSciFi": {
+                  "example": "any"
+                },
+                "genreShortFilm": {
+                  "example": "any"
+                },
+                "genreSport": {
+                  "example": "any"
+                },
+                "genreSuperhero": {
+                  "example": "any"
+                },
+                "genreThriller": {
+                  "example": "any"
+                },
+                "genreWar": {
+                  "example": "any"
+                },
+                "genreWestern": {
+                  "example": "any"
+                },
+                "moviePreview": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/movies/{movieId}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "imageURL": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "releaseYear": {
+                  "example": "any"
+                },
+                "movieHours": {
+                  "example": "any"
+                },
+                "movieMinutes": {
+                  "example": "any"
+                },
+                "genreAction": {
+                  "example": "any"
+                },
+                "genreAdventure": {
+                  "example": "any"
+                },
+                "genreAnimation": {
+                  "example": "any"
+                },
+                "genreBiography": {
+                  "example": "any"
+                },
+                "genreComedy": {
+                  "example": "any"
+                },
+                "genreCrime": {
+                  "example": "any"
+                },
+                "genreDocumentary": {
+                  "example": "any"
+                },
+                "genreDrama": {
+                  "example": "any"
+                },
+                "genreFamily": {
+                  "example": "any"
+                },
+                "genreFantasy": {
+                  "example": "any"
+                },
+                "genreHistory": {
+                  "example": "any"
+                },
+                "genreHorror": {
+                  "example": "any"
+                },
+                "genreMusic": {
+                  "example": "any"
+                },
+                "genreMusical": {
+                  "example": "any"
+                },
+                "genreMystery": {
+                  "example": "any"
+                },
+                "genreRomance": {
+                  "example": "any"
+                },
+                "genreSciFi": {
+                  "example": "any"
+                },
+                "genreShortFilm": {
+                  "example": "any"
+                },
+                "genreSport": {
+                  "example": "any"
+                },
+                "genreSuperhero": {
+                  "example": "any"
+                },
+                "genreThriller": {
+                  "example": "any"
+                },
+                "genreWar": {
+                  "example": "any"
+                },
+                "genreWestern": {
+                  "example": "any"
+                },
+                "moviePreview": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "profileImg": {
+                  "example": "any"
+                },
+                "isAdmin": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{userId}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "profileImg": {
+                  "example": "any"
+                },
+                "isAdmin": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

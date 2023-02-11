@@ -1,0 +1,29 @@
+{
+  "name": "cse341-movie-db",
+  "version": "1.0.0",
+  "description": "movie db project",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app",
+    "swagger": "node ./swagger.js"
+  },
+  "author": "Benjamin Herendeen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.7.1",
+    "joi-password-complexity": "^5.1.0",
+    "mongodb": "^5.0.1",
+    "mongoose": "^6.9.1",
+    "swagger-ui-express": "^4.6.0",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.20",
+    "swagger-autogen": "^2.23.1"
+  }
+}
