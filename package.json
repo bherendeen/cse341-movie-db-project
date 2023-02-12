@@ -7,8 +7,8 @@
     "node": "*"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app",
-    "dev": "cross-env NODE_ENV=development nodemon app",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "swagger": "node ./swagger.js"
   },
   "author": "Benjamin Herendeen",
