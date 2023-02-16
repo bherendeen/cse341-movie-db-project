@@ -1,6 +1,7 @@
 // core mods
 // addon mods
 const express = require('express');
+const { requiresAuth } = require('express-openid-connect');
 // custom mods
 
 // use router
@@ -9,9 +10,17 @@ const router = express.Router();
 // -------------------- //
 // S T A R T    C O D E //
 
+router.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
+
+router.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+
 router.use('/', require('./swagger'));
 router.use('/movies', require('./movieRoutes'));
-router.use('/users', require('./userRoutes'));
+router.use('/users', requiresAuth(), require('./userRoutes'));
 
 // -------------------- //
 // E N D   //   C O D E //

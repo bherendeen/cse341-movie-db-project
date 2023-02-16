@@ -1,88 +1,62 @@
-// LOCALHOST
-###
+// LOCALHOST ###
 
-### get all users
+### login
+GET http://localhost:8080/login
+
+### logout
+GET http://localhost:8080/logout
+
+### get all users 
 GET http://localhost:8080/users
 
-### get single user
+### get single user 
 GET http://localhost:8080/users/63dc26380b1663a18b03bb91
 
-### create user
+### create user 
 POST http://localhost:8080/users HTTP/1.1 
 content-type: application/json
 
+{
+"firstName": "Jason", 
+"lastName": "Miller", 
+"username": "jmiller", 
+"email": "jmiller@email.com", 
+"password": "ghF!gh45", 
+"profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images", 
+"isAdmin": false
+}
 
-  {
-      "firstName": "Jason",
-      "lastName": "Miller",
-      "username": "jmiller",
-      "email": "jmiller@email.com",
-      "password": "ghF!gh45",
-      "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images",
-      "isAdmin": false
-    }
+### update user 
+PUT http://localhost:8080/users/63c97dcb2c31f8a6235c48a9 HTTP/1.1 content-type: application/json
 
+{
+"firstName": "Jason", "lastName": "Miller", "username": "jmiller", "email": "jmiller@email.com", "password": "mypassword", "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images", "isAdmin": false
+}
 
-### update user
-PUT http://localhost:8080/users/63e71cea835cdefc332b8ec0 HTTP/1.1 
-content-type: application/json
+### delete user 
+DELETE http://localhost:8080/users/63c97dcb2c31f8a6235c48a9 HTTP/1.1
 
+### // PRODUCTION ###
 
-  {
-      "firstName": "Aaron",
-      "lastName": "Miller",
-      "username": "amiller",
-      "email": "amiller@email.com",
-      "password": "ghF!gh45",
-      "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images",
-      "isAdmin": false
-    }
+### get all users 
+GET https://cse341-moviedb-project.onrender.com/users
 
+### get single user 
+GET https://cse341-moviedb-project.onrender.com/users/632a32d474be5f4eb6a11c73
 
-### delete user
-DELETE http://localhost:8080/users/63e7272be37115c3e8b30db6 HTTP/1.1 
+### create user 
+POST https://cse341-moviedb-project.onrender.com/users HTTP/1.1 content-type: application/json
 
-###
-// PRODUCTION
-###
+{
+"firstName": "Jason", "lastName": "Miller", "username": "jmiller", "email": "jmiller@email.com", "password": "mypassword", "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images", "isAdmin": false
+}
 
-### get all users
-GET https://cse341-movie-db-project.onrender.comusers
+### update user 
+PUT https://cse341-moviedb-project.onrender.com/users/63c97e11b99bdf39d8593345 HTTP/1.1 content-type: application/json
 
-### get single user
-GET https://cse341-movie-db-project.onrender.comusers/632a32d474be5f4eb6a11c73
+{
+"firstName": "Jason", "lastName": "Miller", "username": "jmiller", "email": "jmiller@email.com", "password": "mypassword", "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images", "isAdmin": false
+}
 
-### create user
-POST https://cse341-movie-db-project.onrender.comusers HTTP/1.1 
-content-type: application/json
-
-
-  {
-      "firstName": "Jason",
-      "lastName": "Miller",
-      "username": "jmiller",
-      "email": "jmiller@email.com",
-      "password": "mypassword",
-      "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images",
-      "isAdmin": false
-    }
-
-
-### update user
-PUT https://cse341-movie-db-project.onrender.comusers/63c97e11b99bdf39d8593345 HTTP/1.1 
-content-type: application/json
-
-
-  {
-      "firstName": "Jason",
-      "lastName": "Miller",
-      "username": "jmiller",
-      "email": "jmiller@email.com",
-      "password": "mypassword",
-      "profileImg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.vkOK0lMVk_0O-xq6JSvJgAHaHa%26pid%3DApi&f=1&ipt=b2353421bcaa83bc8f8116916298eb0f9e9fc8e97888d08bf31da8ca1db0302d&ipo=images",
-      "isAdmin": false
-    }
-
-
-### delete user
-DELETE https://cse341-movie-db-project.onrender.comusers/63c97e11b99bdf39d8593345 HTTP/1.1 
+### delete user 
+DELETE https://cse341-moviedb-project.onrender.com/users/63c97e11b99bdf39d8593345 HTTP/1.1
