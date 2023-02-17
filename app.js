@@ -1,7 +1,6 @@
 // Core mods
 // Addon mods
 const express = require('express');
-const session = require('express-session');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const { auth } = require('express-openid-connect');
@@ -33,13 +32,6 @@ connectDB()
 
 // -------------------- //
 // S T A R T    C O D E //
-
-app.use(session({
-    resave: true,
-    saveUninitialized: true,
-    secret: process.env.SECRET,
-    cookie: { maxAge: 3600000 * 24 }
-}))
 
 app
     .use(bodyParser.json())

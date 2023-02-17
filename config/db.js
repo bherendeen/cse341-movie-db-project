@@ -3,6 +3,8 @@
 const mongoose = require('mongoose');
 // Custom mods
 
+mongoose.set('strictQuery', false);
+
 // -------------------- //
 // S T A R T    C O D E //
 
