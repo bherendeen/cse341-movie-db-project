@@ -14,10 +14,6 @@ router.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-router.get('/profile', requiresAuth(), (req, res) => {
-  res.send(JSON.stringify(req.oidc.user));
-});
-
 router.use('/', require('./swagger'));
 router.use('/movies', require('./movieRoutes'));
 router.use('/users', requiresAuth(), require('./userRoutes'));

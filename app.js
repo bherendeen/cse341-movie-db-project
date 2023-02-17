@@ -22,13 +22,13 @@ const config = {
     issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL
 };
 
-// Connect to DB
-connectDB()
-
 // Run express
 const app = express();
 // Port
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
+
+// Connect to DB
+connectDB()
 
 // -------------------- //
 // S T A R T    C O D E //
