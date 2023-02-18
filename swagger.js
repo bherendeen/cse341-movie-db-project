@@ -20,7 +20,7 @@ const doc = {
     securityDefinitions: {
         oAuthSample: {
             type: 'oauth2',
-            authorizationUrl: 'https://cse341-movie-db-project.onrender.com/users',
+            authorizationUrl: 'https://cse341-movie-db-project.onrender.com/login',
             flow: 'implicit',
             scopes: {
                 read: 'read your users',
