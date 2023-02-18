@@ -12,9 +12,9 @@ const router = express.Router();
 // -------------------- //
 // S T A R T    C O D E //
 
-// router.get('/', (req, res) => {
-//   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-// });
+router.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
 
 router.use('/', require('./swagger'));
 router.use('/movies', require('./movieRoutes'));
