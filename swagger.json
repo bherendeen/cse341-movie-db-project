@@ -23,7 +23,7 @@
   "securityDefinitions": {
     "oAuthSample": {
       "type": "oauth2",
-      "authorizationUrl": "https://cse341-movie-db-project.onrender.com/login",
+      "authorizationUrl": "https://cse341-movie-db-project.onrender.com/",
       "flow": "implicit",
       "scopes": {
         "read": "read your users",
@@ -32,6 +32,17 @@
     }
   },
   "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api-docs": {
       "get": {
         "description": "",
@@ -428,7 +439,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       }
     },
     "/users/{userId}": {
@@ -453,7 +472,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       },
       "put": {
         "tags": [
@@ -509,7 +536,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -532,7 +567,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       }
     }
   }
