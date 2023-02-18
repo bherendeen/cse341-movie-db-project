@@ -1,27 +1,37 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Movie DB",
-    "version": "1.0.0"
+    "description": "A database to look up movies. Admin able to add, update, and delete.",
+    "version": "1.0.0",
+    "title": "Movie DB"
   },
   "host": "cse341-movie-db-project.onrender.com",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "Movies",
+      "description": "Everything to lookup, add, update, delete movies"
+    },
+    {
+      "name": "Users",
+      "description": "Everything to lookup, add, update, delete users. *Authentication required."
+    }
+  ],
   "schemes": [
     "https"
   ],
-  "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
+  "securityDefinitions": {
+    "oAuthSample": {
+      "type": "oauth2",
+      "authorizationUrl": "https://cse341-movie-db-project.onrender.com/users",
+      "flow": "implicit",
+      "scopes": {
+        "read": "read your users",
+        "write": "modify users in your account"
       }
-    },
+    }
+  },
+  "paths": {
     "/api-docs": {
       "get": {
         "description": "",
@@ -31,7 +41,11 @@
     },
     "/movies/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Get all movies",
+        "description": "Endpoint used to get all movies",
         "parameters": [],
         "responses": {
           "200": {
@@ -43,7 +57,11 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Create movie",
+        "description": "Endpoint used to create a movie",
         "parameters": [
           {
             "name": "body",
@@ -163,7 +181,11 @@
     },
     "/movies/{movieId}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Get a movie",
+        "description": "Endpoint used to fetch a single movie | movieId required",
         "parameters": [
           {
             "name": "movieId",
@@ -182,7 +204,11 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Update movie",
+        "description": "Endpoint used to update a single movie | movieId required",
         "parameters": [
           {
             "name": "movieId",
@@ -306,7 +332,11 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Movies"
+        ],
+        "summary": "Delete movie",
+        "description": "Endpoint used to delete a single movie | movieId required",
         "parameters": [
           {
             "name": "movieId",
@@ -327,7 +357,11 @@
     },
     "/users/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get all users",
+        "description": "Endpoint used to fetch all users",
         "parameters": [],
         "responses": {
           "200": {
@@ -336,10 +370,22 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create user",
+        "description": "Endpoint used to create a user",
         "parameters": [
           {
             "name": "body",
@@ -387,7 +433,11 @@
     },
     "/users/{userId}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get single user",
+        "description": "Endpoint used to fetch a single user | userId required",
         "parameters": [
           {
             "name": "userId",
@@ -406,7 +456,11 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update user",
+        "description": "Endpoint used to update a single user | userId required",
         "parameters": [
           {
             "name": "userId",
@@ -458,7 +512,11 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Users"
+        ],
+        "summary": "Delete user",
+        "description": "Endpoint used to delete a single user | userId required",
         "parameters": [
           {
             "name": "userId",

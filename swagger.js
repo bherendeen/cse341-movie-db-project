@@ -2,11 +2,32 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
     info: {
-        title: 'My API',
-        description: 'Movie DB',
+        description: 'A database to look up movies. Admin able to add, update, and delete.',
+        version: '1.0.0',
+        title: 'Movie DB'
     },
     host: 'cse341-movie-db-project.onrender.com',
-    schemes: ['https']
+    schemes: ['https'],
+    tags: [{
+        name: 'Movies',
+        description: 'Everything to lookup, add, update, delete movies'
+    },
+    {
+        name: 'Users',
+        description: 'Everything to lookup, add, update, delete users. *Authentication required.'
+    }
+    ],
+    securityDefinitions: {
+        oAuthSample: {
+            type: 'oauth2',
+            authorizationUrl: 'https://cse341-movie-db-project.onrender.com/users',
+            flow: 'implicit',
+            scopes: {
+                read: 'read your users',
+                write: 'modify users in your account'
+            }
+        }
+    }
 };
 
 const outputFile = './swagger.json';
