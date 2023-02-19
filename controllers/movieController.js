@@ -54,9 +54,17 @@ exports.getSingleMovie = (req, res) => {
 // @desc | POST => Create a movie
 exports.createMovie = (req, res) => {
     /// SWAGGER START ///
-    // #swagger.tags = ['Movies']
-    // #swagger.summary = 'Create movie'
-    // #swagger.description = 'Endpoint used to create a movie'
+    /*
+    * #swagger.tags = ['Movies']
+    * #swagger.summary = 'Create movie'
+    * #swagger.description = 'Endpoint used to create a movie'
+    * #swagger.security = [{
+            "oAuthSample": [
+                "write",
+                "read"
+            ]
+        }] 
+    */
     /// SWAGGER END ///
     try {
         const newMovie = {
@@ -118,9 +126,17 @@ exports.createMovie = (req, res) => {
 // @desc | PUT => Update a movie
 exports.updateMovie = async (req, res) => {
     /// SWAGGER START ///
+    /*
     // #swagger.tags = ['Movies']
-    // #swagger.summary = 'Update movie'
-    // #swagger.description = 'Endpoint used to update a single movie | movieId required'
+    * #swagger.summary = 'Update movie'
+    * #swagger.description = 'Endpoint used to update a single movie | movieId required'
+    * #swagger.security = [{
+            "oAuthSample": [
+                "write",
+                "read"
+            ]
+        }] 
+    */
     /// SWAGGER END ///
     try {
         const movieId = req.params.movieId;
@@ -178,9 +194,17 @@ exports.updateMovie = async (req, res) => {
 // @desc | DELETE => Delete a movie
 exports.deleteMovie = (req, res) => {
     /// SWAGGER START ///
-    // #swagger.tags = ['Movies']
-    // #swagger.summary = 'Delete movie'
-    // #swagger.description = 'Endpoint used to delete a single movie | movieId required'
+    /*
+    * #swagger.tags = ['Movies']
+    * #swagger.summary = 'Delete movie'
+    * #swagger.description = 'Endpoint used to delete a single movie | movieId required'
+    * #swagger.security = [{
+            "oAuthSample": [
+                "write",
+                "read"
+            ]
+        }] 
+    */
     /// SWAGGER END ///
     try {
         const movieId = req.params.movieId;

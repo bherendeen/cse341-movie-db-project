@@ -9,15 +9,17 @@ const User = require('../models/userModel');
 // @desc | GET => Get all users
 exports.getAllUsers = (req, res) => {
     /// SWAGGER START ///
-    // #swagger.tags = ['Users']
-    // #swagger.summary = 'Get all users'
-    // #swagger.description = 'Endpoint used to fetch all users'
-    /* #swagger.security = [{
+    /*
+    * #swagger.tags = ['Users']
+    * #swagger.summary = 'Get all users'
+    * #swagger.description = 'Endpoint used to fetch all users'
+    * #swagger.security = [{
             "oAuthSample": [
                 "write",
                 "read"
             ]
-        }] */
+        }] 
+    */
     /// SWAGGER END ///
     try {
         User.find()
@@ -37,15 +39,17 @@ exports.getAllUsers = (req, res) => {
 // @desc | GET => Get a single user
 exports.getSingleUser = (req, res) => {
     /// SWAGGER START ///
-    // #swagger.tags = ['Users']
-    // #swagger.summary = 'Get single user'
-    // #swagger.description = 'Endpoint used to fetch a single user | userId required'
-    /* #swagger.security = [{
+    /*
+    * #swagger.tags = ['Users']
+    * #swagger.summary = 'Get single user'
+    * #swagger.description = 'Endpoint used to fetch a single user | userId required'
+    * #swagger.security = [{
             "oAuthSample": [
                 "write",
                 "read"
             ]
-        }] */
+        }] 
+    */
     /// SWAGGER END ///
     try {
         const userId = req.params.userId;
@@ -66,15 +70,17 @@ exports.getSingleUser = (req, res) => {
 // @desc | POST => Create a user
 exports.createUser = (req, res) => {
     /// SWAGGER START ///
-    // #swagger.tags = ['Users']
-    // #swagger.summary = 'Create user'
-    // #swagger.description = 'Endpoint used to create a user'
-    /* #swagger.security = [{
+    /*
+    * #swagger.tags = ['Users']
+    * #swagger.summary = 'Create user'
+    * #swagger.description = 'Endpoint used to create a user'
+    * #swagger.security = [{
             "oAuthSample": [
                 "write",
                 "read"
             ]
-        }] */
+        }]
+    */
     /// SWAGGER END ///
     try {
         const newUser = {
@@ -108,15 +114,17 @@ exports.createUser = (req, res) => {
 // @desc | PUT => Update a user
 exports.updateUser = async (req, res) => {
     //// SWAGGER START ///
-    // #swagger.tags = ['Users']
-    // #swagger.summary = 'Update user'
-    // #swagger.description = 'Endpoint used to update a single user | userId required'
-    /* #swagger.security = [{
+    /*
+    * #swagger.tags = ['Users']
+    * #swagger.summary = 'Update user'
+    * #swagger.description = 'Endpoint used to update a single user | userId required'
+    * #swagger.security = [{
             "oAuthSample": [
                 "write",
                 "read"
             ]
-        }] */
+        }] 
+    */
     /// SWAGGER END ///
     try {
         const userId = req.params.userId;
@@ -150,15 +158,17 @@ exports.updateUser = async (req, res) => {
 // @desc | DELETE => Delete a user
 exports.deleteUser = (req, res) => {
     /// SWAGGER START ///
-    // #swagger.tags = ['Users']
-    // #swagger.summary = 'Delete user'
-    // #swagger.description = 'Endpoint used to delete a single user | userId required'
-    /* #swagger.security = [{
+    /*
+    * #swagger.tags = ['Users']
+    * #swagger.summary = 'Delete user'
+    * #swagger.description = 'Endpoint used to delete a single user | userId required'
+    * #swagger.security = [{
             "oAuthSample": [
                 "write",
                 "read"
             ]
-        }] */
+        }] 
+    */
     /// SWAGGER END ///
     try {
         const userId = req.params.userId;
