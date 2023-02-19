@@ -187,7 +187,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       }
     },
     "/movies/{movieId}": {
@@ -340,7 +348,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -363,7 +379,15 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuthSample": [
+              "write",
+              "read"
+            ]
+          }
+        ]
       }
     },
     "/users/": {
